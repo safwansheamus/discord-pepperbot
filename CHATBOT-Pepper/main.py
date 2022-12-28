@@ -6,22 +6,13 @@ from discord.ext import commands, tasks
 from discord.voice_client import VoiceClient
 import youtube_dl
 from random import choice
+from asyncio import sleep as s
 
 intents = discord.Intents.all()
 intents.presences = True
 
 intents.message_content = True
-intents.voice_states = True
-
-class Menu(discord.ui.View):
-    def __init__(self):
-        super().__init__()
-        self.value = None
-        
-        @discord.ui.button(label="Send Massage", style=discord.ButtonStyle.gray)
-        async def menu1(self, button: discord.ui.Button, interaction: discord.Interaction):
-            await interaction.response.send_message("Hello Click Me")
-        
+intents.voice_states = True      
 
 youtube_dl.utils.bug_reports_message = lambda: ''
 
@@ -69,14 +60,14 @@ class YTDLSource(discord.PCMVolumeTransformer):
 
 client = commands.Bot(command_prefix='!p ', intents=intents)
 
-TOKEN = 'MTAyOTQ0NTY5MjIxODk0MTQ2MA.GCA4Xv.rtzvOzBzUtgeekxA8ze2BnBm_g8uxW810E4J5k'
+TOKEN = 'MTAyOTQ0NTY5MjIxODk0MTQ2MA.GCA4Xv.rtzvOzBzUtgeekxA8ze2BnBm_g8uxW810E4J5k' 
 
 status = ['Jamming out to music!', 'Scam', 'DDoS', 'KALI', 'Phising', 'Eating!', 'Sleeping!', 'Hacking!', 'Coding!', 'Maintenance!']
 
 @client.event
 async def on_ready():
     change_status.start()
-    print('Bot is online!')
+    print('Bot is online! as Pepper PEW PEW')
 
 @client.event
 async def on_member_join(member):
@@ -87,6 +78,7 @@ async def on_member_join(member):
 async def on_member_remove(member):
     channel = member.guild.system_channel
     await channel.reply(f"Goodbye {member.mention}, thanks for join this server")
+
 
 @client.command(name='ping', help='This command returns the latency')
 async def ping(ctx):
@@ -179,12 +171,52 @@ async def info(ctx ,member:discord.Member = None):
     embed.set_footer(text=f"{name} Thanks a bunch !")
 
     await ctx.reply(embed=embed)
+    
+@client.command(name='button', help='masih dikembagin')
+async def button(ctx):
+    # Create the embed message
+    embed = discord.Embed(title='Button', description='Click the button to send a message')
 
-@client.command()
-async def menu(ctx):
-    view = Menu()
-    await ctx.reply("Menu Testing", view=view)
+    # Add the button
+    embed.add_field(name='Button', value='[Click here](https://google.com)', inline=False)
 
+    # Send the message
+    await ctx.send(embed=embed)
+
+@client.command(name='remind', help='This command give the remind for information')
+async def remind(ctx, time, task):
+    def convert(time):
+        pos = ['s', 'm', 'h', 'd']
+        
+        time_dict = {"s":1, "m":60, "h":3600, "d":3600*24}
+        
+        unit = time[-1]
+        
+        if unit not in pos:
+            return -1
+        try:
+            val = int(time[:-1])
+        except:
+            return -2
+        return val * time_dict[unit]
+    
+    converted_time = convert(time)
+    
+    if converted_time == -1:
+        await ctx.send("You didn;t anser the time correctly.")
+        return
+    
+    if converted_time == -2:
+        await ctx.send("The Time mush be an integer")
+        return
+    
+    await ctx.send(f"Started reminder for **{task}** and will last **{time}**.")
+    
+    
+    await s(converted_time)
+    await ctx.reply(f"{ctx.author.mention} your reminder for **{task}** has finished")
+    
+    
     
 @tasks.loop(seconds=20)
 async def change_status():
