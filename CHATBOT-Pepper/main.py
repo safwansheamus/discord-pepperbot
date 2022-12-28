@@ -203,7 +203,7 @@ async def remind(ctx, time, task):
     converted_time = convert(time)
     
     if converted_time == -1:
-        await ctx.send("You didn;t anser the time correctly.")
+        await ctx.send("You didn't answer the time correctly.")
         return
     
     if converted_time == -2:

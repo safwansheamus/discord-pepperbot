@@ -1,5 +1,5 @@
 # Pepper Bot Discord
-## _Bryan Samperura (1204041) Universitas Logistik & Bisnis_
+## _Bryan Samperura (1204041) Universitas Logistik & Bisnis International_
 
 [![Build Status](https://res.cloudinary.com/practicaldev/image/fetch/s--jPSX-ydn--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/i/tteuu4xw5tomxb7l0xjx.png)](https://res.cloudinary.com/practicaldev/image/fetch/s--jPSX-ydn--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/i/tteuu4xw5tomxb7l0xjx.png)
 
@@ -7,18 +7,19 @@
 
 - Play Music & Controller Music
 - Interaction Chat with Commands
+- Reminder Features
+- Test Network Ping Features
+- Integration of OpenAI (During Development)
 
 ## Tech
 
-Aplikasi dibangun menggunakan :
+This Bot has Develop with these structure :
 
-- [Python] - Dasar WEB ini menggunkaan Python.
-- [VS Code] - Text editor dalam membuat aplikasi WEB ini.
+- [Python] - This Bot Using Full Python.
+- [VS Code] - Using This for Text Editor.
 
 
 ## How to USE This Bot
-
-Cara menggunakan Bot:
 
 ```sh
 Prefix = "!p (commands)
