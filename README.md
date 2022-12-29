@@ -1,7 +1,7 @@
 # Pepper Bot Discord
 ## _Bryan Samperura (1204041) & Muhammad Sapwan Suhadi (1204037) Universitas Logistik & Bisnis International_
 
-[![Build Status](https://res.cloudinary.com/practicaldev/image/fetch/s--jPSX-ydn--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/i/tteuu4xw5tomxb7l0xjx.png)](https://res.cloudinary.com/practicaldev/image/fetch/s--jPSX-ydn--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/i/tteuu4xw5tomxb7l0xjx.png)
+[![Build Status](https://res.cloudinary.com/dfjwuorv1/image/upload/v1672327427/Developers_sjfges.png)
 
 ## Features
 
