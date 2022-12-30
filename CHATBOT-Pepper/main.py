@@ -78,7 +78,7 @@ status = ['Jamming out to music!', 'Scam', 'DDoS', 'KALI', 'Phising',
 @client.event
 async def on_ready():
     change_status.start()
-    print('Bot is online! as Pepper PEW PEW')
+    print(f'Bot is online! as {client.user},Pepper PEW PEW')
 
 
 @client.event
