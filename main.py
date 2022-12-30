@@ -71,8 +71,13 @@ client = commands.Bot(command_prefix='', intents=intents)
 
 TOKEN = 'MTAyOTQ0NTY5MjIxODk0MTQ2MA.GCA4Xv.rtzvOzBzUtgeekxA8ze2BnBm_g8uxW810E4J5k'
 
-status = ['Jamming out to music!', 'Scam', 'DDoS', 'KALI', 'Phising',
-          'Eating!', 'Sleeping!', 'Hacking!', 'Coding!', 'Maintenance!']
+status = ['Dahar', 'Modol', 'Tunduh', 'Ulin', 'Manre',
+          'Matinro', 'Masessa', 'Malippuno', 'Mabobol', 'Mannasu']
+
+
+@tasks.loop(seconds=20)
+async def change_status():
+    await client.change_presence(activity=discord.Game(choice(status)))
 
 
 @client.event
@@ -81,25 +86,8 @@ async def on_ready():
     print(f'Bot is online! as {client.user},Pepper PEW PEW')
 
 
-@client.event
-async def on_member_join(member):
-    channel = discord.utils.get(member.guild.channels, name='welcome-channel')
-    await channel.reply(f'Welcome {member.mention}!  Ready to jam out? See `!p help` command for details!')
-
-
-@client.event
-async def on_member_remove(member):
-    channel = member.guild.system_channel
-    await channel.reply(f"Goodbye {member.mention}, thanks for join this server")
-
-
 @client.command(name='ping', help='This command returns the latency')
 async def ping(ctx):
     await ctx.send(f'**Pong!** Latency: {round(client.latency * 1000)}ms')
-
-
-@tasks.loop(seconds=20)
-async def change_status():
-    await client.change_presence(activity=discord.Game(choice(status)))
 
 client.run(token)
