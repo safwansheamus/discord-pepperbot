@@ -5,9 +5,8 @@ from random import choice
 from dotenv import load_dotenv
 import openai
 
-load_dotenv()
 
-# ENV
+load_dotenv()
 openai.api_key = os.environ['TOKEN2']
 TokenDiscord = os.environ['TOKEN']
 
@@ -20,8 +19,8 @@ intents.message_content = True
 client = commands.Bot(command_prefix='', intents=intents)
 
 # Data dalam fungsi tasks yang akan di looping
-status = ['Dahar', 'Modol', 'Tunduh', 'Ulin', 'Manre',
-          'Matinro', 'Masessa', 'Malippuno', 'Mabobol', 'Mannasu']
+status = ['Dahar', 'Modol', 'Tunduh', 'Mannasu', 'Manre',
+          'Kobe Oser', 'Ayaine Mambri', 'Nawamar', 'Bolehh']
 
 
 @tasks.loop(seconds=20)
@@ -34,40 +33,30 @@ async def on_ready():
     change_status.start()
     print(f'Bot is online! as {client.user},Pepper PEW PEW')
 
+
 @client.event
 async def on_message(message):
     if message.author == client.user:
         return
-    
+
     if message.content.startswith("!openai"):
-    # Split message into list of words
         words = message.content.split()
-    
-    # Remove command from list of words
+
     words.pop(0)
-    
-    # Join remaining words into a single string
+
     prompt = " ".join(words)
-    
-    # Use GPT-3 to generate response
+
     response = openai.Completion.create(
-    model="text-davinci-003",
-    prompt=prompt,
-    temperature=0.9,
-    max_tokens=150,
-    top_p=1,
-    frequency_penalty=0.0,
-    presence_penalty=0.6,
-    stop=[" Human:", " AI:"]
+        model="text-davinci-003",
+        prompt=prompt,
+        temperature=0.9,
+        max_tokens=150,
+        top_p=1,
+        frequency_penalty=0.0,
+        presence_penalty=0.6,
+        stop=[" Human:", " AI:"]
     )
-    
-    # Send response to channel
+
     await message.channel.send(response.choices[0].text)
-
-
-
-# @client.command()
-# async def chatgpt(ctx, response):
-#     await ctx.send(response["choices"][0]['text'])
 
 client.run(TokenDiscord)
