@@ -3,7 +3,7 @@
 
 ## Project II
 
--[1204041] - Bryan Samperura
+- [1204041] - Bryan Samperura
 - [1204037] - Muhammad Sapwan Suhadi
 
 [![Build Status](https://res.cloudinary.com/dfjwuorv1/image/upload/v1672327427/Developers_sjfges.png)](https://res.cloudinary.com/practicaldev/image/fetch/s--jPSX-ydn--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/i/tteuu4xw5tomxb7l0xjx.png)
