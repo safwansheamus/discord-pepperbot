@@ -1,5 +1,5 @@
 # Pepper Bot Discord Integration to OpenAI
-##_Universitas Logistik & Bisnis International_
+## _Universitas Logistik & Bisnis International_
 
 ## Project II
 
