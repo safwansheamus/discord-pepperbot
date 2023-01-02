@@ -31,7 +31,7 @@ async def change_status():
 @client.event
 async def on_ready():
     change_status.start()
-    print(f'Bot is online! as {client.user},Pepper PEW PEW')
+    print(f'Bot is online! as Pepper PEW PEW')
 
 
 @client.event
