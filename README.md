@@ -28,7 +28,7 @@ This Bot has Develop with these structure :
 - On the menu bar, click on "View" and then select "Terminal". This will open the terminal window within VSCode.
 - Type the command
 ```sh
-main.py
+pyhton main.py
 ```
 - press "Enter" on ur keyboard
 
