@@ -32,6 +32,7 @@ async def change_status():
 async def on_ready():
     change_status.start()
     print(f'Bot is online! as Pepper PEW PEW')
+    
 
 
 @client.event
@@ -40,15 +41,15 @@ async def on_message(message):
         return
 
     if message.content.startswith("!openai"):
-        words = message.content.split()
-
-    words.pop(0)
-
-    prompt = " ".join(words)
+        inputan = message.content.split()
+            
+    inputan.pop(0)
+    
+    hasil = " ".join(inputan)
 
     response = openai.Completion.create(
         model="text-davinci-003",
-        prompt=prompt,
+        prompt=hasil,
         temperature=0.9,
         max_tokens=1024,
         top_p=1,
