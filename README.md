@@ -16,10 +16,10 @@
 
 This Bot has Develop with these structure :
 
-- [Python] - This Bot Using Full Python.
-- [VS Code] - Using This for Text Editor.
-- [Discord] - Using Library Discord to make bot.
-- [OpenAI] - Using Library to Integration OpenAI.
+- [Python](https://www.python.org/) - This Bot Using Full Python.
+- [VS Code](https://code.visualstudio.com/) - Using This for Text Editor.
+- [Discord](https://discordpy.readthedocs.io/en/stable/) - Using Library Discord to make bot.
+- [OpenAI](https://openai.com/api/) - Using Library to Integration OpenAI.
 
 ## How to USE This Bot
 
