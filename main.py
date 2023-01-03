@@ -23,6 +23,9 @@ status = ['Dahar', 'Modol', 'Tunduh', 'Mannasu', 'Manre',
           'Kobe Oser', 'Ayaine Mambri', 'Nawamar', 'Bolehh']
 
 
+prepik = "!ask", "!openai", "!oi", "!pepper", "!Pepper"
+
+
 @tasks.loop(seconds=20)
 async def change_status():
     await client.change_presence(activity=discord.Game(choice(status)))
@@ -32,7 +35,6 @@ async def change_status():
 async def on_ready():
     change_status.start()
     print(f'Bot is online! as Pepper PEW PEW')
-    
 
 
 @client.event
@@ -40,11 +42,15 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.content.startswith("!openai"):
+    # Tidak Menggunakan Prefix
+    # if message.content.startswith(""):
+
+    # Menggunakan Prefix
+    if message.content.startswith(prepik):
         inputan = message.content.split()
-            
+
     inputan.pop(0)
-    
+
     hasil = " ".join(inputan)
 
     response = openai.Completion.create(
