@@ -23,9 +23,23 @@ This Bot has Develop with these structure :
 
 ## How to USE This Bot
 
+### First :
+- Open VSCode.
+- On the menu bar, click on "View" and then select "Terminal". This will open the terminal window within VSCode.
+- Type the command
+```sh
+main.py
+```
+- press "Enter" on ur keyboard
+
+### Second :
+- If u done lets to going to discord
+- Type the command
+
 ```sh
 Prefix = "!openai (what we'r looking for)
 ```
+- press "Enter" on ur keyboard
 
 ## License
 
